@@ -3,16 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PersonsComponent } from './components/persons/persons.component';
+import { PersonComponent } from './components/person/person.component';
+import { PersonService } from './services/person.service';
+import { MaterialModule } from './material/material.module';
+comp
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PersonsComponent,
+    PersonComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
-  providers: [],
+  providers: [PersonService, PersonComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,24 @@
+<div class="example-action-buttons">
+  <button mat-button (click)="accordion.openAll()">Expand All</button>
+  <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+</div>
+<mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel *ngFor="let person of persons; let i = index">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>account_circle</mat-icon>
+        {{person.firstName}} {{person.lastName}}
+      </mat-panel-title>
+      <mat-panel-description>
+        <span></span>
+        <div>
+          <mat-icon>edit</mat-icon>
+          <mat-icon>delete</mat-icon>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-person [person]="person" (editPerson)="onEdit($event)" (deletePerson)="onDelete($event)"></app-person>
+
+  </mat-expansion-panel>
+</mat-accordion>
