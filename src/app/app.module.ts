@@ -9,21 +9,28 @@ import { PersonsComponent } from './components/persons/persons.component';
 import { PersonComponent } from './components/person/person.component';
 import { PersonService } from './services/person.service';
 import { MaterialModule } from './material/material.module';
-comp
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
     PersonsComponent,
     PersonComponent
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
+  // exports: [
+  //   PersonComponent,
+  //   MaterialModule
+  // ],
   providers: [PersonService, PersonComponent],
   bootstrap: [AppComponent]
 })

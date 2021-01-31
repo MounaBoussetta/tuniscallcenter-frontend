@@ -63,9 +63,10 @@ export class PersonComponent implements OnInit {
     return change;
   }
 
-  createFormError(formControl) {
+  createFormError(formControl: any) {
 
-    const formControlError = {};
+    const formControlError : any = {};
+    console.log('formControl', formControl)
 
     for (const field in formControl.controls) {
 
@@ -79,7 +80,7 @@ export class PersonComponent implements OnInit {
       // Get the control
       const control = formControl.get(field);
       if (control && control['controls'] && control['controls'].length > 0) {
-        formControlError[field] = createFormError(control);
+        formControlError[field] = this.createFormError(control);
       } else if (control && control.dirty && !control.valid) {
         formControlError[field] = control.errors;
       }

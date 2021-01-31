@@ -12,8 +12,7 @@
       <mat-panel-description>
         <span></span>
         <div>
-          <mat-icon>edit</mat-icon>
-          <mat-icon>delete</mat-icon>
+          <mat-icon (click)="$event.stopPropagation();onDelete(person)">delete</mat-icon>
         </div>
       </mat-panel-description>
     </mat-expansion-panel-header>

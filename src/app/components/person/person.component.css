@@ -1,0 +1,14 @@
+.mat-form-field{
+  padding-right: 1.25em !important;
+}
+
+.position-button-right{
+  float: right !important;
+}
+
+.mat-progress-spinner {
+  display: inline-block;
+}
+.button[disabled] {
+
+}
