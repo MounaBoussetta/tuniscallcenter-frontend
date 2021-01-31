@@ -34,11 +34,11 @@
 
   <div class="m-0 p-16 position-button-right" fxLayout="row" fxLayoutAlign="end center">
     <span></span>
-    <button mat-raised-button class="mat-primary" aria-label="SAVE" [disabled]="formFildes.invalid || !view || loading"
+    <button mat-raised-button class="mat-primary" aria-label="SAVE" [disabled]="formFildes.invalid || !view || loadingButton"
       (click)="edit()">
       <mat-icon>edit</mat-icon>
       <span class="btn-text">Edit</span>
-      <mat-progress-spinner [mode]="'indeterminate'" [diameter]="20" *ngIf="loading" [color]="'primary'">
+      <mat-progress-spinner [mode]="'indeterminate'" [diameter]="20" *ngIf="loadingButton" [color]="'primary'">
       </mat-progress-spinner>
     </button>
   </div>

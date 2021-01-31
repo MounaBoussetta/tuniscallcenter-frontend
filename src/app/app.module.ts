@@ -10,13 +10,15 @@ import { PersonComponent } from './components/person/person.component';
 import { PersonService } from './services/person.service';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonsComponent,
-    PersonComponent
+    PersonComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -27,11 +29,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule
   ],
-  // exports: [
-  //   PersonComponent,
-  //   MaterialModule
-  // ],
   providers: [PersonService, PersonComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ ConfirmationDialogComponent ]
 })
 export class AppModule { }

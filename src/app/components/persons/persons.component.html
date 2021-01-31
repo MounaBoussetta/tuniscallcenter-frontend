@@ -17,7 +17,7 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
 
-    <app-person [person]="person" (editPerson)="onEdit($event)" (deletePerson)="onDelete($event)"></app-person>
+    <app-person [person]="person" [loading]="loading" (editPerson)="onEdit($event)"></app-person>
 
   </mat-expansion-panel>
 </mat-accordion>

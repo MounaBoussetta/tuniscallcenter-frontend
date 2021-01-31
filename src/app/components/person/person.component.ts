@@ -13,8 +13,13 @@ export class PersonComponent implements OnInit {
   formFildes!: FormGroup;
   formFildesOrigin!: FormGroup;
   formErrors: any;
-  loading: boolean = false;
+  loadingButton: boolean = false;
   view: boolean = false;
+
+  @Input()
+  set loading(loading: boolean) {
+    this.loadingButton = loading;
+  }
 
   @Input()
   set person(person: Person) {
@@ -22,7 +27,6 @@ export class PersonComponent implements OnInit {
   }
 
   @Output() editPerson = new EventEmitter<any>();
-  @Output() deletePerson = new EventEmitter<any>();
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -43,13 +47,11 @@ export class PersonComponent implements OnInit {
   }
 
   edit() {
-    this.formFildes.value.id = this.currentPerson.id;
-    this.loading = true;
-    this.editPerson.emit(this.formFildes.value);
-  }
-
-  delete(){
-    this.deletePerson.emit(this.currentPerson.id);
+    let obj = {
+      id: this.currentPerson.id,
+      person: this.formFildes.value
+    }
+    this.editPerson.emit(obj);
   }
 
   compare(obj1: any, obj2: any) {
